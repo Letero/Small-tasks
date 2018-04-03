@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 /*simple operations: */
-int setBit(int val, int pos)        // set given bit in given integer to 1
+unsigned int setBit(unsigned int val, unsigned int pos)        // set given bit in given integer to 1
 {
     return val | (1 << pos);
 }
 
-int toggleBit(int val, int pos)     // set given bit in given integer to opposite value
+unsigned int toggleBit(unsigned int val, unsigned int pos)     // set given bit in given integer to opposite value
 {
     return val ^ (1 << pos);
 }
 
-int clearBit(int val, int pos)      // set given bit in given integer to 0
+unsigned int clearBit(unsigned int val, unsigned int pos)      // set given bit in given integer to 0
 {
     return val & ~(1 << pos);
 }
@@ -27,7 +27,7 @@ void printByte(unsigned char byte)  // prints binary representation of given byt
 
 /* fun with bitwise operations */
 
-void printInt(int value)            // prints integer byte by byte using right shift operation
+void printInt(unsigned int value)            // prints integer byte by byte using right shift operation
 {
     for (int i = 0; i < 4; ++i)
     {
@@ -42,7 +42,7 @@ union
     int val;
 } cutInt;
 
-void printIntUnionCut(int value)    // prints integer byte by byte using union
+void printIntUnionCut(unsigned int value)    // prints integer byte by byte using union
 {
     cutInt.val = value;
     for (int i = 0; i < 4; ++i)
@@ -52,29 +52,30 @@ void printIntUnionCut(int value)    // prints integer byte by byte using union
     puts("");
 }
 
-int swapInnerBytes(int x)
+unsigned int swapInnerBytes(unsigned int x)
 {
     return (((x << 8) & 0xFF0000) | ((x >> 8) & 0xFF00)) | (x & 0xFF0000FF);
 }
 
-int swapOuterBytes(int x)
+unsigned int swapOuterBytes(unsigned int x)
 {
     return ((((x << 24) & 0xFF000000) | ((x >> 24) & 0xFF))) | (x & 0xFFFF00);
 }
 
-int clearEvenBits(int x)         //
+unsigned int clearEvenBits(unsigned int x)         //
 {
     return x & 0x55555555;
 }
 
-int clearOddBits(int x)
+unsigned int clearOddBits(unsigned int x)
 {
     return x & 0xAAAAAAAA;
 }
 
 
-int main(int argc, char *argv[])
+unsigned int main(unsigned int argc, char *argv[])
 {
+    //printByte(0xff);
     printInt(0xFFFFFF00);
     //printInt(0xFF0000FF);
     //printIntUnionCut(0xFF050500);
