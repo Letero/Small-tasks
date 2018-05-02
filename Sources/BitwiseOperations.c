@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "../Headers/Common.h"
+#include "../Headers/BitwiseOperations.h"
 
 /*simple operations: */
 unsigned int setBit(unsigned int val, unsigned int pos)        // set given bit in given integer to 1
@@ -26,9 +27,9 @@ void printByte(unsigned char byte)  // prints binary representation of given byt
     }
 }
 
-/* fun with bitwise operations */
 
-void printInt(unsigned int value)            // prints integer byte by byte using right shift operator, default little endian
+
+void printInt(unsigned int value) 
 {
     printf("| ");
     for (int i = 0; i < 4; ++i)
@@ -39,7 +40,7 @@ void printInt(unsigned int value)            // prints integer byte by byte usin
     puts("");
 }
 
-void printIntBigEndian(unsigned int value)  // print integer byte by byte using right shift operator, now represent as big endian
+void printIntBigEndian(unsigned int value)
 {
     printf("| ");
     for (int i = 3; i >= 0; --i)
@@ -50,13 +51,7 @@ void printIntBigEndian(unsigned int value)  // print integer byte by byte using 
     puts("");
 }
 
-union
-{
-    char arr[4];
-    int val;
-} cutInt;
-
-void printIntUnionCut(unsigned int value)    // prints integer byte by byte using union
+void printIntUnionCut(unsigned int value)
 {
     cutInt.val = value;
     for (int i = 0; i < 4; ++i)
@@ -85,14 +80,4 @@ unsigned int clearEvenBits(unsigned int x)         //
 unsigned int clearOddBits(unsigned int x)
 {
     return x & 0xAAAAAAAA;
-}
-
-
-unsigned int main(unsigned int argc, char *argv[])
-{
-    //printByte(0xF0);
-    printInt(0xFFFFFF00);
-    printIntBigEndian(0xFFFFFF00);
-    //printIntUnionCut(0xFF050500);
-    //printIntUnionCut(swapOuterBytes(0xFF050500));
 }

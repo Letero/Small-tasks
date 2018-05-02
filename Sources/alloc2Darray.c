@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define WIDTH 5
-#define HEIGHT 5
+#include "../Headers/Common.h"
+#include "../Headers/alloc2Darray.h"
 
-// return by value
 int** alloc2DArray(int width, int height)
 {
     int ** arr = (int**)malloc(sizeof(int*) * width);
@@ -13,7 +10,7 @@ int** alloc2DArray(int width, int height)
     }
     return arr;
 }
-// return by pointer
+
 void alloc2DArrayPtr(int ***arr, int width, int height)
 {
     *arr = (int**)malloc(sizeof(int*) * width);
@@ -25,6 +22,10 @@ void alloc2DArrayPtr(int ***arr, int width, int height)
 
 void free2DArray(int **arr, int width)
 {
+    if (arr == NULL)
+    {
+        return;
+    }
     for (int i = 0; i < width; ++i)
     {
         free(arr[i]);
@@ -34,6 +35,10 @@ void free2DArray(int **arr, int width)
 
 void fillandPrint(int **arr, int width, int height)
 {
+    if (arr == NULL)
+    {
+        return;
+    }
     for (int i = 0; i < width; ++i)
     {
         for (int j = 0; j < height; ++j)
@@ -50,15 +55,4 @@ void fillandPrint(int **arr, int width, int height)
         }
         puts("");
     }
-}
-// TODO:
-// alloc 2d array with one malloc
-
-int main(int argc, char *argv[])
-{
-    int **arr = alloc2DArray(WIDTH, HEIGHT);
-    //alloc2DArrayPtr(&arr, WIDTH, HEIGHT);
-    fillandPrint(arr, WIDTH, HEIGHT);
-    free2DArray(arr, WIDTH);
-    return 0;
 }
