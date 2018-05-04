@@ -65,10 +65,10 @@ int** allocWithOneMalloc(int width, int height)
 {
     int** arr = (int**)malloc(sizeof(int*) * width * sizeof(int) * height + (sizeof(int*) * width));
     int * offset = (int*)(arr + width);
+    
     for (int i = 0; i < width; ++i)
     {
         arr[i] = offset + i * height; 
     }
-    
     return arr;
 }
