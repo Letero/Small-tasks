@@ -34,7 +34,7 @@ void free2DArray(int **arr, int width)
     free (arr);
 }
 
-void fillandPrint(int **arr, int width, int height)
+void fillArray(int **arr, int width, int height)
 {
     if (arr == NULL)
     {
@@ -47,7 +47,10 @@ void fillandPrint(int **arr, int width, int height)
             arr[i][j] = i * j;
         }
     }
+}
 
+void printArray(int **arr, int width, int height)
+{
     for (int i = 0; i < width; ++i)
     {
         for (int j = 0; j < height; ++j)
@@ -56,4 +59,16 @@ void fillandPrint(int **arr, int width, int height)
         }
         puts("");
     }
+}
+
+int** allocWithOneMalloc(int width, int height)
+{
+    int** arr = (int**)malloc(sizeof(int*) * width * sizeof(int) * height + (sizeof(int*) * width));
+    int * offset = (int*)(arr + width);
+    for (int i = 0; i < width; ++i)
+    {
+        arr[i] = offset + i * height; 
+    }
+    
+    return arr;
 }
