@@ -1,6 +1,7 @@
 #include "../Headers/Common.h"
 #include "../Headers/alloc2Darray.h"
 
+
 int** alloc2DArray(int width, int height)
 {
     int ** arr = (int**)malloc(sizeof(int*) * width);
