@@ -1,4 +1,4 @@
-#include "../Headers/Common.h"
+#include "Common.h"
 // return allocated array by value
 int** alloc2DArray(int width, int height);
 // return allocated array by pointer
