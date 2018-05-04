@@ -1,4 +1,3 @@
-#include "./Headers/Common.h"
 #include "./Headers/BitwiseOperations.h"
 int main(int argc, char *argv[])
 {

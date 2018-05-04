@@ -1,4 +1,3 @@
-#include "../Headers/Common.h"
 #include "../Headers/alloc2Darray.h"
 
 #define WIDTH 5
