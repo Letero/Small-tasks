@@ -6,8 +6,11 @@ char *abbreviate(const char *phrase)
     int count = 0;
     
     if (length == 0)
+	{
+		free(acronym);
         return NULL;
-    acronym[0] = phrase[0]; 
+    }
+	acronym[0] = phrase[0]; 
     for (int i = 1; i < length; ++i)
     {
         if (phrase[i-1] == ' ' || phrase[i-1] == '\n')
@@ -24,6 +27,7 @@ char *abbreviate(const char *phrase)
         }
         if (count >= MAX_WORDS)
         {
+			free(acronym);
             return NULL;
         }
     }
