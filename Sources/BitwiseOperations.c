@@ -1,4 +1,3 @@
-#include "../Headers/Common.h"
 #include "../Headers/BitwiseOperations.h"
 
 /*simple operations: */
@@ -62,22 +61,22 @@ void printIntUnionCut(unsigned int value)
     puts("");
 }
 
-unsigned int swapInnerBytes(unsigned int x)
+unsigned int swapInnerBytes(unsigned int value)
 {
-    return (((x << 8) & 0xFF0000) | ((x >> 8) & 0xFF00)) | (x & 0xFF0000FF);
+    return (((value << 8) & 0xFF0000) | ((value >> 8) & 0xFF00)) | (value & 0xFF0000FF);
 }
 
-unsigned int swapOuterBytes(unsigned int x)
+unsigned int swapOuterBytes(unsigned int value)
 {
-    return ((((x << 24) & 0xFF000000) | ((x >> 24) & 0xFF))) | (x & 0xFFFF00);
+    return ((((value << 24) & 0xFF000000) | ((value >> 24) & 0xFF))) | (value & 0xFFFF00);
 }
 
-unsigned int clearEvenBits(unsigned int x)         //
+unsigned int clearEvenBits(unsigned int value)         //
 {
-    return x & 0x55555555;
+    return value & 0x55555555;
 }
 
-unsigned int clearOddBits(unsigned int x)
+unsigned int clearOddBits(unsigned int value)
 {
-    return x & 0xAAAAAAAA;
+    return value & 0xAAAAAAAA;
 }
