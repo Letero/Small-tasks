@@ -1,7 +1,9 @@
 #ifndef BITWISEOPERATIONS_H
 #define BITWISEOPERATIONS_H
 
-#include "Common.h"
+#include <stdio.h>  // standard in/out library
+#include <stdlib.h> // standard C library
+
 /* simple/basic/the most common operations: */
 unsigned int setBit(unsigned int val, unsigned int pos);    // set given bit in given integer to 1
 unsigned int toggleBit(unsigned int val, unsigned int pos); // set given bit in given integer to opposite value
@@ -18,9 +20,9 @@ union // this union is used to "cut" integer into bytes
 void printIntBigEndian(unsigned int value); // print integer byte by byte using right shift operator, now represent as big endian
 
 void printIntUnionCut(unsigned int value);   // prints integer byte by byte using union
-unsigned int swapInnerBytes(unsigned int x); // swaps middle bytes of integer
-unsigned int swapOuterBytes(unsigned int x);
-unsigned int clearEvenBits(unsigned int x); // sets bits at even positions to 0
-unsigned int clearOddBits(unsigned int x);  // sets bits at odd positions to 0
+unsigned int swapInnerBytes(unsigned int value); // swaps middle bytes of integer
+unsigned int swapOuterBytes(unsigned int value);
+unsigned int clearEvenBits(unsigned int value); // sets bits at even positions to 0
+unsigned int clearOddBits(unsigned int value);  // sets bits at odd positions to 0
 
 #endif // BITWISEOPERATIONS_H
