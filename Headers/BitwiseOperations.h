@@ -1,8 +1,7 @@
 #ifndef BITWISEOPERATIONS_H
 #define BITWISEOPERATIONS_H
 
-#include <stdio.h>  // standard in/out library
-#include <stdlib.h> // standard C library
+#include "Common.h"
 
 /* simple/basic/the most common operations: */
 unsigned int setBit(unsigned int val, unsigned int pos);    // set given bit in given integer to 1
