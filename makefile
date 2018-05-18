@@ -3,7 +3,7 @@ CFLAGS=-I.
 SRC = ./Sources
 TESTS = ./Tests
 
-all: exec_alloc2D acronym
+all: exec_alloc2D acronym bitOperations
 
 build: exec_alloc2D acronym bitOperations
 
