@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-I.
+CFLAGS= -std=c99 -I.
 SRC = ./Sources
 TESTS = ./Tests
 
