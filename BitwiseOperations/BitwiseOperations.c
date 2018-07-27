@@ -83,3 +83,8 @@ unsigned int clearOddBits(unsigned int value)
 {
     return value & 0xAAAAAAAA;
 }
+
+bool isPowerOfTwo(unsigned int value)
+{
+    return value & (value - 1);
+}
