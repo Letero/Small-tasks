@@ -71,10 +71,10 @@ unsigned int swapInnerBytes(unsigned int value)
 
 unsigned int swapOuterBytes(unsigned int value)
 {
-    return ((((value << 24) & 0xFF000000) | ((value >> 24) & 0xFF))) | (value & 0xFFFF00);
+    return (((value << 24) & 0xFF000000) | ((value >> 24) & 0xFF)) | (value & 0xFFFF00);
 }
 
-unsigned int clearEvenBits(unsigned int value) //
+unsigned int clearEvenBits(unsigned int value)
 {
     return value & 0x55555555;
 }
@@ -82,4 +82,14 @@ unsigned int clearEvenBits(unsigned int value) //
 unsigned int clearOddBits(unsigned int value)
 {
     return value & 0xAAAAAAAA;
+}
+
+bool isPowerOfTwo(unsigned int value)
+{
+    return value & (value - 1);
+}
+
+unsigned int swapAdjacentBits(unsigned int value)
+{
+    return (value << 1 & 0xAAAAAAAA) | (value >> 1 & 0x55555555);
 }
