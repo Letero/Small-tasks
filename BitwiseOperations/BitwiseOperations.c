@@ -71,10 +71,10 @@ unsigned int swapInnerBytes(unsigned int value)
 
 unsigned int swapOuterBytes(unsigned int value)
 {
-    return ((((value << 24) & 0xFF000000) | ((value >> 24) & 0xFF))) | (value & 0xFFFF00);
+    return (((value << 24) & 0xFF000000) | ((value >> 24) & 0xFF)) | (value & 0xFFFF00);
 }
 
-unsigned int clearEvenBits(unsigned int value) //
+unsigned int clearEvenBits(unsigned int value)
 {
     return value & 0x55555555;
 }
