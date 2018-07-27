@@ -7,7 +7,6 @@ unsigned int toggleBit(unsigned int val, unsigned int pos); // set given bit in 
 unsigned int clearBit(unsigned int val, unsigned int pos);  // set given bit in given integer to 0
 void printByte(unsigned char byte);                         // prints binary representation of given byte
 void printInt(unsigned int value);                          // prints integer byte by byte using right shift operator, default little endian
-
 /* fun with bitwise operations */
 
 union // this union is used to "cut" integer into bytes
@@ -16,6 +15,7 @@ union // this union is used to "cut" integer into bytes
     int val;
 } cutInt;
 
+unsigned int rotateBits(unsigned int val, unsigned int howManyToRotate);
 void printIntBigEndian(unsigned int value); // print integer byte by byte using right shift operator, now represent as big endian
 
 void printIntUnionCut(unsigned int value);       // prints integer byte by byte using union

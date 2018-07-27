@@ -26,6 +26,11 @@ void printByte(unsigned char byte) // prints binary representation of given byte
     }
 }
 
+unsigned int rotateBits(unsigned int val, unsigned int howManyToRotate)
+{
+    return (val >> howManyToRotate) | (val << (sizeof(unsigned int) * 8 - howManyToRotate));
+}
+
 void printInt(unsigned int value)
 {
     printf("| ");
