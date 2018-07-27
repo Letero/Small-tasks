@@ -29,5 +29,6 @@ unsigned int swapInnerBytes(unsigned int value); // swaps middle bytes of intege
 unsigned int swapOuterBytes(unsigned int value);
 unsigned int clearEvenBits(unsigned int value); // sets bits at even positions to 0
 unsigned int clearOddBits(unsigned int value);  // sets bits at odd positions to 0
+unsigned int swapAdjacentBits(unsigned int value);
 
 #endif // BITWISEOPERATIONS_H
