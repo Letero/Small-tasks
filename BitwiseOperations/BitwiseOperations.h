@@ -31,4 +31,11 @@ unsigned int clearEvenBits(unsigned int value); // sets bits at even positions t
 unsigned int clearOddBits(unsigned int value);  // sets bits at odd positions to 0
 unsigned int swapAdjacentBits(unsigned int value);
 
+/*
+You are given two numbers a and b where 0 ≤ a ≤ b. 
+Imagine you construct an array of all the integers from a to b inclusive. 
+You need to count the number of 1s in the binary representations of all the numbers in the array.
+*/
+
+unsigned int rangeBitCount(unsigned int a, unsigned int b);
 #endif // BITWISEOPERATIONS_H

@@ -93,3 +93,19 @@ unsigned int swapAdjacentBits(unsigned int value)
 {
     return (value << 1 & 0xAAAAAAAA) | (value >> 1 & 0x55555555);
 }
+
+unsigned int rangeBitCount(unsigned int a, unsigned int b)
+{
+    int counter = 0;
+    for (int i = a; i <= b; ++i)
+    {
+        for (int j = 0; j < 32; ++j)
+        {
+            if (i & (1 << j))
+            {
+                counter++;
+            }
+        }
+    }
+    return counter;
+}
