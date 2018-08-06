@@ -109,3 +109,15 @@ unsigned int rangeBitCount(unsigned int a, unsigned int b)
     }
     return counter;
 }
+
+unsigned int mirrorBits(unsigned int value)
+{
+    int b = 0;
+    while (value)
+    {
+        b <<= 1;
+        b |= value & 1;
+        value >>= 1;
+    }
+    return b;
+}
