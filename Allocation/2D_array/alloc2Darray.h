@@ -11,7 +11,9 @@ void free2DArray(int **arr, int width);
 void fillArray(int **arr, int width, int height);
 // print array, function is used to test
 void printArray(int **arr, int width, int height);
-// alloc 2d array using one malloc function
+// alloc 2d array using one malloc function, return by value
 int **allocWithOneMalloc(int width, int height);
+// alloc 2d array using one malloc function, return by pointer
+void allocWithOneMallocPtr(int ***arr, int width, int height);
 
 #endif // ALLOC2DARRAY_H

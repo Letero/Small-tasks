@@ -1,6 +1,6 @@
 #include "alloc3Darray.h"
 
-int **alloc3DArray(int width, int height, int depth)
+int ***alloc3DArray(int width, int height, int depth)
 {
 }
 

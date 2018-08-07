@@ -2,7 +2,7 @@
 #define ALLOC3DARRAY_H
 
 // return allocated array by value
-int **alloc3DArray(int width, int height, int depth);
+int ***alloc3DArray(int width, int height, int depth);
 // return allocated array by pointer
 void alloc3DArrayPtr(int ****arr, int width, int height, int depth);
 // free allocated memory

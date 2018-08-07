@@ -72,3 +72,14 @@ int **allocWithOneMalloc(int width, int height)
     }
     return arr;
 }
+
+void allocWithOneMallocPtr(int ***arr, int width, int height)
+{
+    *arr = (int **)malloc(sizeof(int *) * width * sizeof(int) * height + (sizeof(int *) * width));
+    int *offset = (int *)(arr + width);
+
+    for (int i = 0; i < width; ++i)
+    {
+        (*arr)[i] = offset + i * height;
+    }
+}
