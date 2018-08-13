@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -std=c99 -I.
+CFLAGS= -std=c99 -I. -pedantic
 
 
 build: 

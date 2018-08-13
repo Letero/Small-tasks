@@ -5,36 +5,32 @@
 
 char *abbreviate(const char *phrase)
 {
-    char *acronym = malloc(MAX_WORDS + 1 * sizeof(char));
-    int length = strlen(phrase);
-    int count = 0;
 
-    if (length == 0)
+    char *acronym = (char *)calloc(MAX_WORDS + 1 * sizeof(char), 1);
+    int flag = 1;
+    int i = 0;
+
+    while (*phrase)
     {
-        free(acronym);
-        return NULL;
-    }
-    acronym[0] = phrase[0];
-    for (int i = 1; i < length; ++i)
-    {
-        if (phrase[i - 1] == ' ' || phrase[i - 1] == '\n')
+        if (phrase[0] == ' ')
         {
-            ++count;
-            if (phrase[i] > 'a' || phrase[i] < 'z')
+            flag = 1;
+        }
+
+        if (flag && phrase[0] != ' ')
+        {
+            if (phrase[0] >= 97)
             {
-                acronym[count] = phrase[i] - 32;
+                acronym[i++] = phrase[0] - 32;
             }
             else
             {
-                acronym[count] = phrase[i];
+                acronym[i++] = phrase[0];
             }
+            flag = 0;
         }
-        if (count >= MAX_WORDS)
-        {
-            free(acronym);
-            return NULL;
-        }
+        ++phrase;
     }
-    acronym[MAX_WORDS] = '\n';
+    acronym[i] = '\n';
     return acronym;
 }
