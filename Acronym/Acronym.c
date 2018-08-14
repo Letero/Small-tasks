@@ -5,7 +5,6 @@
 
 char *abbreviate(const char *phrase)
 {
-
     char *acronym = (char *)calloc(MAX_WORDS + 1 * sizeof(char), 1);
     int flag = 1;
     int i = 0;
@@ -19,7 +18,7 @@ char *abbreviate(const char *phrase)
 
         if (flag && phrase[0] != ' ')
         {
-            if (phrase[0] >= 97)
+            if (phrase[0] >= 97) //lower to upper case
             {
                 acronym[i++] = phrase[0] - 32;
             }
@@ -32,5 +31,11 @@ char *abbreviate(const char *phrase)
         ++phrase;
     }
     acronym[i] = '\n';
+
+    if (i > MAX_WORDS)
+    {
+        return "fail";
+    }
+
     return acronym;
 }

@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-  char *acronym = abbreviate("I want you to return perfect acronym!");
+  char *acronym = abbreviate("T e s t i n g 2 0 w o r d s m a x i m u m");
   printf("%s", acronym);
   char *acronym1 = abbreviate("Jary Kon\n");
   printf("\n%s\n", acronym1);
