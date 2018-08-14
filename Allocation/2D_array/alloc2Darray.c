@@ -49,13 +49,13 @@ void fillArray(int **arr, int width, int height)
     }
 }
 
-void printArray(int **arr, int width, int height)
+void printArray(int ***arr, int width, int height)
 {
     for (int i = 0; i < width; ++i)
     {
         for (int j = 0; j < height; ++j)
         {
-            printf("%d ", arr[i][j]);
+            printf("%d ", (*arr)[i][j]);
         }
         puts("");
     }
@@ -63,7 +63,7 @@ void printArray(int **arr, int width, int height)
 
 int **allocWithOneMalloc(int width, int height)
 {
-    int **arr = (int **)malloc(sizeof(int *) * width * sizeof(int) * height + (sizeof(int *) * width));
+    int **arr = (int **)calloc(sizeof(int *) * width * sizeof(int) * height + (sizeof(int *) * width), 1);
     int *offset = (int *)(arr + width);
 
     for (int i = 0; i < width; ++i)
@@ -75,8 +75,8 @@ int **allocWithOneMalloc(int width, int height)
 
 void allocWithOneMallocPtr(int ***arr, int width, int height)
 {
-    *arr = (int **)malloc(sizeof(int *) * width * sizeof(int) * height + (sizeof(int *) * width));
-    int *offset = (int *)(arr + width);
+    *arr = (int **)calloc(sizeof(int *) * width * (sizeof(int) * height + (sizeof(int *) * width)), 1);
+    int *offset = (int *)(*arr + width);
 
     for (int i = 0; i < width; ++i)
     {
