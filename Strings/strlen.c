@@ -11,15 +11,12 @@ size_t mystrlen(const char *string) // my first draft
     return count - 1;
 }
 
-size_t proStrLen(const char *str)   // bsd implementation
+size_t proStrLen(const char *str) // bsd implementation
 {
     const char *n;
 
     for (n = str; *n; ++n)
-    {
-        printf("%s ", n);
-    }
-        
+        ;
 
     return (n - str);
 }
