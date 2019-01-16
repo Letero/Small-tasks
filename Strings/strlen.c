@@ -8,14 +8,14 @@ size_t mystrlen(const char *string) // my first draft
     {
         temp = string[count++];
     }
-    return count - 1;
+    return count - 1; //ignore \0
 }
 
-size_t proStrLen(const char *str) // bsd implementation
+size_t proStrLen(const char *str)
 {
-    const char *n;
+    const char *n = str;
 
-    for (n = str; *n; ++n)
+    for (; *n; ++n)
         ;
 
     return (n - str);

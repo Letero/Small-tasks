@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include <string.h>
+#include <mystring.h>
 
 void mystrrev(unsigned char *str)
 {
-    unsigned int len = strlen((const char*)str);
+    unsigned int len = strlen((const char *)str);
     unsigned char temp;
-    
-    for (int i = 0, j = len-1; i < j; ++i, --j)
+
+    for (int i = 0, j = len - 1; i < j; ++i, --j)
     {
         temp = str[i];
         str[i] = str[j];
