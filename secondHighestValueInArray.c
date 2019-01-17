@@ -17,6 +17,10 @@ int secondHighestValueInArray(int *array, int size)
             next = array[i];
         }
     }
+    if (next == INT_MIN)
+    {
+        next = max;
+    }
     return next;
 }
 
