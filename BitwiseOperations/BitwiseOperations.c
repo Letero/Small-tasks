@@ -121,3 +121,16 @@ unsigned int mirrorBits(unsigned int value)
     }
     return b;
 }
+
+unsigned int countOnes(unsigned long int value)
+{
+    int count = 0;
+    for (int i = 0; i < sizeof(unsigned long int) * 8; ++i)
+    {
+        if (value << i & value)
+        {
+            count++;
+        }
+    }
+    return count;
+}

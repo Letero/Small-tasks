@@ -52,6 +52,11 @@ unsigned int clearOddBits(unsigned int value);
  * */
 unsigned int swapAdjacentBits(unsigned int value);
 
+/**
+ * return amount of 1 in a given integer
+ **/
+unsigned int countOnes(unsigned long int value);
+
 /*
 You are given two numbers a and b where 0 ≤ a ≤ b. 
 Imagine you construct an array of all the integers from a to b inclusive. 

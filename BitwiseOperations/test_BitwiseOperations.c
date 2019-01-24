@@ -1,8 +1,10 @@
 #include "BitwiseOperations.h"
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
 
+    printf("%lu\n", countOnes(255));
     //printByte(0xF0);
     printIntBigEndian(13245);
     printIntBigEndian(isPowerOfTwo(0));
