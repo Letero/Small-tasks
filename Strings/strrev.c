@@ -29,7 +29,7 @@ void mystrrev2(unsigned char *str)
 
 int main(int argc, char *argv[])
 {
-    unsigned char str[7] = "Hello!";
+    char str[7] = "Hello!";
     mystrrev(str);
     printf("%s\n", str); //test
     return 0;
