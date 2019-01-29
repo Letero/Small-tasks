@@ -14,17 +14,15 @@ void mystrrev(char *str)
     }
 }
 
-void mystrrev2(unsigned char *str)
+char* mystrrev2(const char *str)    //return by value
 {
-    unsigned int len = strlen((const char *)str);
-    unsigned char temp;
-    
-    for (int i = 0, j = len - 1; i < j; ++i, --j)
+    int len = strlen(str);
+    char *arr = malloc(sizeof(char) * len);
+    for (int i = 0, j = len - 1; i < len; ++i, --j)
     {
-        temp = str[i];
-        str[i] = str[j];
-        str[j] = temp;
+        arr[i] = str[j];
     }
+    return arr;
 }
 
 int main(int argc, char *argv[])
