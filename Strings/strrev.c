@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <mystring.h>
 
-void mystrrev(char *str)
+void reverseV1(char *str)
 {
     unsigned int len = strlen((const char *)str);
     char temp;
@@ -14,7 +14,21 @@ void mystrrev(char *str)
     }
 }
 
-char* mystrrev2(const char *str)    //return by value
+void reverseV2(char* str)
+{
+    int len = strlen(str);
+    char tmp;
+    
+    for(int i = 0; i < len/2; i++)
+    {
+        tmp = str[i];
+        str[i] = str[l-i-1];
+        str[l-i-1] = tmp;
+    }
+}
+
+
+char* reverseV3(const char *str)    //return by value
 {
     int len = strlen(str);
     char *arr = malloc(sizeof(char) * len);
@@ -28,7 +42,7 @@ char* mystrrev2(const char *str)    //return by value
 int main(int argc, char *argv[])
 {
     char str[7] = "Hello!";
-    mystrrev(str);
+    reverseV2(str);
     printf("%s\n", str); //test
     return 0;
 }
