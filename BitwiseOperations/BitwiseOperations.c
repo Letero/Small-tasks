@@ -134,3 +134,18 @@ unsigned int countOnes(unsigned long int value)
     }
     return count;
 }
+
+unsigned int hammingDistance(unsigned int x, int y) 
+{
+    int count = 0;
+    int a = x ^ y;
+    while(a)
+    {
+        if (a & 1)
+        {
+            count++;
+        }
+        a>>=1;
+    }
+    return count;
+}

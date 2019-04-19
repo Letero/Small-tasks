@@ -64,9 +64,14 @@ You need to count the number of 1s in the binary representations of all the numb
 */
 unsigned int rangeBitCount(unsigned int a, unsigned int b);
 
-/*
-* Reverse the order of the bits in a given integer.
-*/
+/**
+ * Reverse the order of the bits in a given integer.
+ */
 unsigned int mirrorBits(unsigned int value);
+
+/**
+ * Number of different bits in given numbers 
+ */
+unsigned int hammingDistance(unsigned int x, unsigned int y);
 
 #endif // BITWISEOPERATIONS_H
